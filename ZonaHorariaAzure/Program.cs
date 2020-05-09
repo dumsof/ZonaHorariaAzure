@@ -1,15 +1,15 @@
-﻿using System;
-using System.Linq;
-
-namespace ZonaHorariaAzure
+﻿namespace ZonaHorariaAzure
 {
+    using System;
+    using System.Linq;
+
     public static class Program
     {
-        private static void main(string[] args)
+        private static void Main(string[] args)
         {
-            var TimeZones = TimeZoneInfo.GetSystemTimeZones().Select(x => new { x.BaseUtcOffset, x.Id }).ToList();
+            var timeZones = System.TimeZoneInfo.GetSystemTimeZones().Select(x => new { x.BaseUtcOffset, x.Id }).ToList();
 
-            foreach (var item in TimeZones)
+            foreach (var item in timeZones)
             {
                 Console.WriteLine($"Hora: {item.BaseUtcOffset.Hours} Zona horaria: {item.Id}");
             }
